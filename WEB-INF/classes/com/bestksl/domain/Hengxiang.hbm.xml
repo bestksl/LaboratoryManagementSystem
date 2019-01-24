@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-11 18:52:15 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.bestksl.domain.Hengxiang" table="hengxiang" catalog="ksldb">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="50" />
+        </property>
+        <property name="number" type="string">
+            <column name="number" length="50" />
+        </property>
+        <property name="persion" type="string">
+            <column name="persion" length="50" />
+        </property>
+        <property name="begintime" type="timestamp">
+            <column name="begintime" length="19" />
+        </property>
+        <property name="endtime" type="timestamp">
+            <column name="endtime" length="19" />
+        </property>
+        <property name="funds" type="string">
+            <column name="funds" length="50" />
+        </property>
+        <property name="members" type="string">
+            <column name="members" length="200" />
+        </property>
+        <property name="hetongfang" type="string">
+            <column name="hetongfang" length="50" />
+        </property>
+        <property name="finish" type="string">
+            <column name="finish" length="50" />
+        </property>
+        <property name="interprate" type="string">
+            <column name="interprate" length="200" />
+        </property>
+        <property name="filedir" type="string">
+            <column name="filedir" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

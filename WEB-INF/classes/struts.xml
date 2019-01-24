@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="utf-8" />
+
+	<package name="default" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="u"
+				class="com.bestksl.interceptor.loginInterceptor"></interceptor>
+		</interceptors>
+		<default-action-ref name="index" />
+
+		<global-results>
+			<result name="login">/WEB-INF/Login.jsp</result>
+			<result name="error">/WEB-INF/error/error.jsp</result>
+		</global-results>
+		<!-- <global-exception-mappings> <exception-mapping result="error" exception="java.lang.Exception"></exception-mapping> 
+			</global-exception-mappings> -->
+		<action name="index" class="com.bestksl.action.IndexAction">
+			<result>
+				/WEB-INF/Login.jsp
+			</result>
+		</action>
+		<action name="Literature--*" class="com.bestksl.action.LiteratureAction"
+			method="{1}">
+			<result name="toliterature">
+				/WEB-INF/filemanage/literature/literature.jsp
+			</result>
+			<result name="toaddliterature">
+				/WEB-INF/filemanage/literature/addliterature.jsp
+			</result>
+			<result name="input">
+				/WEB-INF/filemanage/literature/addliterature.jsp
+			</result>
+			<result name="tofilemanage">
+				/WEB-INF/filemanage/filemanage.jsp
+			</result>
+			<interceptor-ref name="u"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+
+		</action>
+		<action name="Achievement--*" class="com.bestksl.action.AchievementAction"
+			method="{1}">
+			<result name="toachievement">
+				/WEB-INF/filemanage/achievement/achievement.jsp
+			</result>
+			<result name="toaddachievement">
+				/WEB-INF/filemanage/achievement/addachievement.jsp
+			</result>
+			<result name="input">
+				/WEB-INF/filemanage/achievement/addachievement.jsp
+			</result>
+			<result name="tofilemanage">
+				/WEB-INF/filemanage/filemanage.jsp
+			</result>
+			<interceptor-ref name="u"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+
+		</action>
+		<action name="Book--*" class="com.bestksl.action.BookAction"
+			method="{1}">
+			<result name="tobook">
+				/WEB-INF/filemanage/book/book.jsp
+			</result>
+			<result name="toaddbook">
+				/WEB-INF/filemanage/book/addbook.jsp
+			</result>
+			<result name="input">
+				/WEB-INF/filemanage/book/addbook.jsp
+			</result>
+			<result name="tofilemanage">
+				/WEB-INF/filemanage/filemanage.jsp
+			</result>
+			<interceptor-ref name="u"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+
+		</action>
+		<action name="Patent--*" class="com.bestksl.action.PatentAction"
+			method="{1}">
+			<result name="topatent">
+				/WEB-INF/filemanage/patent/patent.jsp
+			</result>
+			<result name="toaddpatent">
+				/WEB-INF/filemanage/patent/addpatent.jsp
+			</result>
+			<result name="input">
+				/WEB-INF/filemanage/patent/addpatent.jsp
+			</result>
+			<result name="tofilemanage">
+				/WEB-INF/filemanage/filemanage.jsp
+			</result>
+			<interceptor-ref name="u"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+
+		</action>
+		<action name="Paper--*" class="com.bestksl.action.PaperAction"
+			method="{1}">
+			<result name="topaper">
+				/WEB-INF/filemanage/paper/paper.jsp
+			</result>
+			<result name="toaddpaper">
+				/WEB-INF/filemanage/paper/addpaper.jsp
+			</result>
+			<result name="input">
+				/WEB-INF/filemanage/paper/addpaper.jsp
+			</result>
+			<result name="tofilemanage">
+				/WEB-INF/filemanage/filemanage.jsp
+			</result>
+
+			<interceptor-ref name="u"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="FileManage--*" class="com.bestksl.action.FileManageAction"
+			method="{1}">
+			<result name="topaper" type="chain">
+				<param name="actionname">Paper--toPaper</param>
+			</result>
+			<result name="topatent" type="chain">
+				<param name="actionname">Patent--toPatent</param>
+			</result>
+			<result name="toachievement" type="chain">
+				<param name="actionname">Achievement--toAchievement</param>
+			</result>
+			<result name="tobook" type="chain">
+				<param name="actionname">Book--toBook</param>
+			</result>
+			<result name="toliterature" type="chain">
+				<param name="actionname">Literature--toLiterature</param>
+			</result>
+			<result name="tofilemanage">
+				/WEB-INF/filemanage/filemanage.jsp
+			</result>
+			<interceptor-ref name="u"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+
+		</action>
+
+		<action name="Software--*" class="com.bestksl.action.SoftwareAction"
+			method="{1}">
+			<result name="tosoftware">
+				/WEB-INF/software/software.jsp
+			</result>
+			<result name="toaddsoftware">
+				/WEB-INF/software/addsoftware.jsp
+			</result>
+			<result name="input">
+				/WEB-INF/software/addsoftware.jsp
+			</result>
+			<result name="toupdatesoftware">
+				/WEB-INF/software/updatesoftware.jsp
+			</result>
+			<interceptor-ref name="u"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+
+		<action name="FileDownLoad" class="com.bestksl.action.FileDownLoadAction">
+			<result type="stream">
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+			</result>
+			<interceptor-ref name="u"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+
+		<action name="Hardware--*" class="com.bestksl.action.HardwareAction"
+			method="{1}">
+			<result name="tohardware">
+				/WEB-INF/hardware/hardware.jsp
+			</result>
+			<result name="toaddhardware">
+				/WEB-INF/hardware/addhardware.jsp
+			</result>
+			<result name="input">
+				/WEB-INF/hardware/addhardware.jsp
+			</result>
+			<result name="toupdatehardware">
+				/WEB-INF/hardware/updatehardware.jsp
+			</result>
+			<interceptor-ref name="u"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+
+		<action name="User--*" class="com.bestksl.action.UserAction"
+			method="{1}">
+			<result name="toregist">
+				/WEB-INF/regist.jsp
+			</result>
+			<result name="tomanagermainpage" type="chain">
+				<param name="actionname">Message--toManagerMainpage</param>
+			</result>
+			<result name="tomainpage" type="chain">
+				<param name="actionname">Message--toMainpage</param>
+			</result>
+			<result name="tologin">
+				/WEB-INF/Login.jsp
+			</result>
+			<result name="input">
+				/WEB-INF/{1}.jsp
+			</result>
+			<result name="tomanageuser">
+				/WEB-INF/manager/manageuser.jsp
+			</result>
+			<result name="toupdateuser">
+				/WEB-INF/manager/updateuser.jsp
+			</result>
+		</action>
+
+		<action name="Message--*" class="com.bestksl.action.MessageAction"
+			method="{1}">
+			<result name="tomainpage">
+				/WEB-INF/newmainpage.jsp
+			</result>
+			<result name="tomanagemessage">
+				/WEB-INF/manager/managemessage.jsp
+			</result>
+			<result name="tomanagermainpage">
+				/WEB-INF/manager/managermainpage.jsp
+			</result>
+			<result name="toaddmessage">
+				/WEB-INF/manager/addmessage.jsp
+			</result>
+			<result name="touseraddmessage">
+				/WEB-INF/manager/useraddmessage.jsp
+			</result>
+			<result name="toupdatemessage">
+				/WEB-INF/manager/updatemessage.jsp
+			</result>
+			<result name="toshowmessage">
+				/WEB-INF/manager/showmessage.jsp
+			</result>
+			<result name="input">
+				/WEB-INF/manager/addmessage.jsp
+			</result>
+			<interceptor-ref name="u"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+
+		</action>
+		<action name="SecurityCodeImageAction" class="com.bestksl.action.SecurityCodeImageAction">
+			<result name="success" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">imageStream</param>
+				<param name="bufferSize">2048</param>
+			</result>
+		</action>
+		<action name="Hengxiang--*" class="com.bestksl.action.HengxiangAction"
+			method="{1}">
+			<result name="tohengxiang">
+				/WEB-INF/filemanage/hengxiang/hengxiang.jsp
+			</result>
+			<result name="toaddhengxiang">
+				/WEB-INF/filemanage/hengxiang/addhengxiang.jsp
+			</result>
+			<result name="input">
+				/WEB-INF/filemanage/hengxiang/addhengxiang.jsp
+			</result>
+			<result name="tofilemanage">
+				/WEB-INF/filemanage/filemanage.jsp
+			</result>
+
+			<interceptor-ref name="u"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="Zongxiang--*" class="com.bestksl.action.ZongxiangAction"
+			method="{1}">
+			<result name="tozongxiang">
+				/WEB-INF/filemanage/zongxiang/zongxiang.jsp
+			</result>
+			<result name="toaddzongxiang">
+				/WEB-INF/filemanage/zongxiang/addzongxiang.jsp
+			</result>
+			<result name="input">
+				/WEB-INF/filemanage/zongxiang/addzongxiang.jsp
+			</result>
+			<result name="tofilemanage">
+				/WEB-INF/filemanage/filemanage.jsp
+			</result>
+
+			<interceptor-ref name="u"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+	</package>
+
+	<!-- Add packages here -->
+
+</struts>

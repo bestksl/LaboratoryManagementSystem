@@ -1,0 +1,57 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+	<field name="paper.name">
+		<field-validator type="requiredstring">
+			<message>论文名称不能为空</message>
+		</field-validator>
+
+	</field>
+	<field name="paper.author">
+		<field-validator type="requiredstring">
+			<message>作者不能为空</message>
+		</field-validator>
+	</field>
+	<field name="paper.teacher">
+		<field-validator type="requiredstring">
+			<message>指导教师不能为空</message>
+		</field-validator>
+	</field>
+	<field name="paper.time">
+		<field-validator type="required">
+			<message>发表日期不能为空</message>
+		</field-validator>
+	</field>
+	<field name="paper.type">
+		<field-validator type="requiredstring">
+			<message>论文类型不能为空</message>
+		</field-validator>
+	</field>
+	<field name="paper.mettingname">
+		<field-validator type="requiredstring">
+			<message>期刊/会议名称不能为空</message>
+		</field-validator>
+	</field>
+	<field name="paper.juanheqi">
+		<field-validator type="requiredstring">
+			<message>卷/期不能为空</message>
+		</field-validator>
+	</field>
+	<field name="paper.qishiyema">
+		<field-validator type="requiredstring">
+			<message>起始页码不能为空</message>
+		</field-validator>
+	</field>
+	<field name="paper.wenzhangbianhao">
+		<field-validator type="requiredstring">
+			<message>文章编号不能为空</message>
+		</field-validator>
+	</field>
+	<field name="paper.jiansuohao">
+		<field-validator type="requiredstring">
+			<message>检索号不能为空</message>
+		</field-validator>
+	</field>
+</validators>

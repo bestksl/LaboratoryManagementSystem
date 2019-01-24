@@ -1,0 +1,21 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+	<field name="achievement.name">
+		<field-validator type="requiredstring">
+			<message>成果名称不能为空</message>
+		</field-validator>
+	</field>
+	<field name="achievement.time">
+		<field-validator type="required">
+			<message>日期不能为空</message>
+		</field-validator>
+	</field>
+	<field name="achievement.introduce">
+		<field-validator type="requiredstring">
+			<message>简介不能为空</message>
+		</field-validator>
+	</field>
+</validators>

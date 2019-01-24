@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-6-5 13:59:53 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.bestksl.domain.Software" table="software" catalog="ksldb">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="50" not-null="true" />
+        </property>
+        <property name="author" type="string">
+            <column name="author" length="50" not-null="true" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="50" not-null="true" />
+        </property>
+        <property name="function" type="string">
+            <column name="function" length="50" not-null="true" />
+        </property>
+        <property name="info" type="string">
+            <column name="info" length="50" not-null="true" />
+        </property>
+        <property name="time" type="timestamp">
+            <column name="time" length="19" not-null="true" />
+        </property>
+        <property name="addr" type="string">
+            <column name="addr" length="500" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

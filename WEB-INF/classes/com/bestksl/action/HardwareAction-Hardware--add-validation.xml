@@ -1,0 +1,47 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+	<field name="hardware.name">
+		<field-validator type="requiredstring">
+			<message>硬件名称不能为空</message>
+		</field-validator>
+	</field>
+	<field name="hardware.type">
+		<field-validator type="requiredstring">
+			<message>类型不能为空</message>
+		</field-validator>
+	</field>
+	<field name="hardware.function">
+		<field-validator type="requiredstring">
+			<message>功能不能为空</message>
+		</field-validator>
+	</field>
+	<field name="hardware.info">
+		<field-validator type="requiredstring">
+			<message>简介不能为空</message>
+		</field-validator>
+	</field>
+	<field name="hardware.bytime">
+		<field-validator type="required">
+			<message>购买日期不能为空</message>
+		</field-validator>
+		<field-validator type="date">
+			<message>购买日期不能为空</message>
+		</field-validator>
+	</field>
+	<field name="hardware.number">
+		<field-validator type="required">
+			<message>数量不能为空</message>
+		</field-validator>
+		<field-validator type="int">
+			<message>数量只能是数字</message>
+		</field-validator>
+	</field>
+	<field name="hardware.addr">
+		<field-validator type="requiredstring">
+			<message>位置不能为空</message>
+		</field-validator>
+	</field>
+</validators>

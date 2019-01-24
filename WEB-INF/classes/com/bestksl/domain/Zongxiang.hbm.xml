@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-13 15:43:01 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.bestksl.domain.Zongxiang" table="zongxiang" catalog="ksldb">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="fromm" type="string">
+            <column name="fromm" length="50" />
+        </property>
+        <property name="xmtype" type="string">
+            <column name="xmtype" length="50" />
+        </property>
+        <property name="hdtype" type="string">
+            <column name="hdtype" length="50" />
+        </property>
+        <property name="ssxk" type="string">
+            <column name="ssxk" length="50" />
+        </property>
+        <property name="kcname" type="string">
+            <column name="kcname" length="50" />
+        </property>
+        <property name="number" type="string">
+            <column name="number" length="50" />
+        </property>
+        <property name="person" type="string">
+            <column name="person" length="50" />
+        </property>
+        <property name="begin" type="timestamp">
+            <column name="begin" length="19" />
+        </property>
+        <property name="end" type="timestamp">
+            <column name="end" length="19" />
+        </property>
+        <property name="funds" type="string">
+            <column name="funds" length="50" />
+        </property>
+        <property name="realfunds" type="string">
+            <column name="realfunds" length="50" />
+        </property>
+        <property name="zzxs" type="string">
+            <column name="zzxs" length="50" />
+        </property>
+        <property name="hzxs" type="string">
+            <column name="hzxs" length="50" />
+        </property>
+        <property name="ktzcy" type="string">
+            <column name="ktzcy" length="500" />
+        </property>
+        <property name="stunumber" type="string">
+            <column name="stunumber" length="50" />
+        </property>
+        <property name="situation" type="string">
+            <column name="situation" length="500" />
+        </property>
+        <property name="finish" type="string">
+            <column name="finish" length="50" />
+        </property>
+        <property name="endtime" type="timestamp">
+            <column name="endtime" length="19" />
+        </property>
+        <property name="cddw" type="string">
+            <column name="cddw" length="100" />
+        </property>
+        <property name="cgdjh" type="string">
+            <column name="cgdjh" length="50" />
+        </property>
+        <property name="filedir" type="string">
+            <column name="filedir" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

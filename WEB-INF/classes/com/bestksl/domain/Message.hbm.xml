@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-6-5 13:59:53 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.bestksl.domain.Message" table="message" catalog="ksldb">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="user" class="com.bestksl.domain.User" fetch="select">
+            <column name="author" length="50" not-null="true" />
+        </many-to-one>
+        <property name="theme" type="string">
+            <column name="theme" length="50" not-null="true" />
+        </property>
+        <property name="time" type="timestamp">
+            <column name="time" length="19" not-null="true" />
+        </property>
+        <property name="message" type="string">
+            <column name="message" length="50000" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

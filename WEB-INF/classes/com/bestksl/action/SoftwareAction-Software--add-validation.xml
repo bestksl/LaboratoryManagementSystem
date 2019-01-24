@@ -1,0 +1,36 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+	<field name="software.name">
+		<field-validator type="requiredstring">
+			<message>软件名称不能为空</message>
+		</field-validator>
+	</field>
+	<field name="software.author">
+		<field-validator type="requiredstring">
+			<message>作者不能为空</message>
+		</field-validator>
+	</field>
+	<field name="software.type">
+		<field-validator type="requiredstring">
+			<message>类型不能为空</message>
+		</field-validator>
+	</field>
+	<field name="software.function">
+		<field-validator type="requiredstring">
+			<message>功能不能为空</message>
+		</field-validator>
+	</field>
+	<field name="software.info">
+		<field-validator type="requiredstring">
+			<message>简介不能为空</message>
+		</field-validator>
+	</field>
+	<field name="software.time">
+		<field-validator type="required">
+			<message>日期不能为空</message>
+		</field-validator>
+	</field>
+</validators>

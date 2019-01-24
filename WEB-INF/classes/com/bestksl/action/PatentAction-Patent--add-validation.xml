@@ -1,0 +1,33 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+	<field name="patent.name">
+		<field-validator type="requiredstring">
+			<message>专利名称不能为空</message>
+		</field-validator>
+
+	</field>
+	<field name="patent.author">
+		<field-validator type="requiredstring">
+			<message>作者不能为空</message>
+		</field-validator>
+	</field>
+	<field name="patent.time">
+		<field-validator type="required">
+			<message>发表日期不能为空</message>
+		</field-validator>
+	</field>
+	<field name="patent.type">
+		<field-validator type="requiredstring">
+			<message>专利类型不能为空</message>
+		</field-validator>
+	</field>
+	<field name="patent.number">
+		<field-validator type="requiredstring">
+			<message>专利编号不能为空</message>
+		</field-validator>
+	</field>
+	
+</validators>
